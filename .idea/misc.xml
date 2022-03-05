@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Android/BWXplore/app/src/main/res/drawable/bg_btn_rounded.xml" value="0.193" />
+        <entry key="..\:/Android/BWXplore/app/src/main/res/drawable/bg_btn_rounded_white.xml" value="0.193" />
+        <entry key="..\:/Android/BWXplore/app/src/main/res/drawable/bg_et_rounded.xml" value="0.193" />
+        <entry key="..\:/Android/BWXplore/app/src/main/res/drawable/cursor_color.xml" value="0.193" />
+        <entry key="..\:/Android/BWXplore/app/src/main/res/drawable/gradient.xml" value="0.193" />
+        <entry key="..\:/Android/BWXplore/app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.193" />
+        <entry key="..\:/Android/BWXplore/app/src/main/res/drawable/ic_baseline_key_24.xml" value="0.193" />
+        <entry key="..\:/Android/BWXplore/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.193" />
+        <entry key="..\:/Android/BWXplore/app/src/main/res/drawable/ic_baseline_person_black.xml" value="0.193" />
+        <entry key="..\:/Android/BWXplore/app/src/main/res/drawable/login.xml" value="0.129" />
+        <entry key="..\:/Android/BWXplore/app/src/main/res/drawable/my_rect.xml" value="0.121" />
+        <entry key="..\:/Android/BWXplore/app/src/main/res/layout-v31/activity_login.xml" value="0.25" />
+        <entry key="..\:/Android/BWXplore/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.16598639455782313" />
+        <entry key="..\:/Android/BWXplore/app/src/main/res/layout-w936dp/activity_login.xml" value="0.1" />
+        <entry key="..\:/Android/BWXplore/app/src/main/res/layout/activity_login.xml" value="0.264" />
+        <entry key="..\:/Android/BWXplore/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Android/BWXplore/app/src/main/res/layout/activity_maps.xml" value="0.25" />
+        <entry key="..\:/Android/BWXplore/app/src/main/res/layout/activity_onboarding.xml" value="0.25" />
+        <entry key="..\:/Android/BWXplore/app/src/main/res/layout/activity_register.xml" value="0.25" />
+        <entry key="..\:/Android/BWXplore/app/src/main/res/layout/activity_splash.xml" value="0.2" />
+        <entry key="..\:/Android/BWXplore/app/src/main/res/layout/fragment_dashboard.xml" value="0.152" />
+        <entry key="..\:/Android/BWXplore/app/src/main/res/layout/fragment_home.xml" value="0.264" />
+        <entry key="..\:/Android/BWXplore/app/src/main/res/layout/fragment_notifications.xml" value="0.25" />
+        <entry key="..\:/Android/BWXplore/app/src/main/res/layout/item_popular.xml" value="0.264" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

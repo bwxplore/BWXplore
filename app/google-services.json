@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "317094620576",
+    "project_id": "bwxplore",
+    "storage_bucket": "bwxplore.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:317094620576:android:0745d3d97cfc3eb294c8c5",
+        "android_client_info": {
+          "package_name": "com.yura.bwxplore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "317094620576-1s0vot1kuekpfspgmoantffff8g763lf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.yura.bwxplore",
+            "certificate_hash": "5791947a8921cec878020d27ad43f25be82a36c5"
+          }
+        },
+        {
+          "client_id": "317094620576-01ptid0tc6c4o8878rmdcusj8en9hk9d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXP1uAhpzHGzn8DdkeMqZpHkdD1xCDFac"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "317094620576-01ptid0tc6c4o8878rmdcusj8en9hk9d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
