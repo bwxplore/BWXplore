@@ -1,5 +1,7 @@
 package com.yura.bwxplore.data
 
+import com.yura.bwxplore.data.firebase.entities.Location
+
 object LocationData {
     private val data: List<Location> =
         listOf(

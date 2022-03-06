@@ -1,4 +1,4 @@
-package com.yura.bwxplore.data
+package com.yura.bwxplore.data.firebase.entities
 
 data class Location(
     var id: Int? = null,

@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.yura.bwxplore.R
-import com.yura.bwxplore.data.Location
+import com.yura.bwxplore.data.firebase.entities.Location
 import com.yura.bwxplore.databinding.ItemPopularBinding
 
 class PopularAdapter(private val listLocation: ArrayList<Location>) :
