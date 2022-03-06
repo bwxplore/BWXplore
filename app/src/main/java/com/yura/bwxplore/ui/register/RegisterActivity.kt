@@ -73,8 +73,8 @@ class RegisterActivity : AppCompatActivity() {
                         }
 
                         user.updateProfile(profileUpdates)
-                            .addOnCompleteListener { task ->
-                                if (task.isSuccessful) {
+                            .addOnCompleteListener {
+                                if (it.isSuccessful) {
                                     reload()
                                 }
                             }

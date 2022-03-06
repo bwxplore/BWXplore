@@ -5,18 +5,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.yura.bwxplore.data.firebase.Repository
 
-class HomeViewModel : ViewModel() {
-
-    private lateinit var firebaseUser: FirebaseUser
-
-    private val _text = MutableLiveData<String>().apply {
-        value = getUserData()
-    }
-    val text: LiveData<String> = _text
-
-    private fun getUserData(): String? {
-        firebaseUser = FirebaseAuth.getInstance().currentUser!!
-        return firebaseUser.displayName
-    }
+class HomeViewModel(private val repository: Repository) : ViewModel() {
+    fun getAllPlaces() = repository.getAllPlaces()
+    fun getPopularPlaces() = repository.getPopularPlaces()
 }
