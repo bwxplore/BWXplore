@@ -5,5 +5,6 @@ data class Location(
     var name: String = "",
     var lat: Float? = null,
     var long: Float? = null,
-    var photo: String = ""
+    var imageUrl: String = "",
+    var popular: Boolean = false
 )

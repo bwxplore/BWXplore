@@ -7,7 +7,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
 import com.yura.bwxplore.R
 import com.yura.bwxplore.data.Location
 import com.yura.bwxplore.databinding.ItemPopularBinding
@@ -43,7 +42,7 @@ class PopularAdapter(private val listLocation: ArrayList<Location>) :
         var imgPhoto: ImageView = itemView.findViewById(R.id.iv_popular)
         fun bind(data: Location) {
             Glide.with(itemView.context)
-                .load(data.photo)
+                .load(data.imageUrl)
                 .into(imgPhoto)
             tvName.text = data.name
         }
