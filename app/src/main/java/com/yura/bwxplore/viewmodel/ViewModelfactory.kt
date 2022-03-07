@@ -3,7 +3,7 @@ package com.yura.bwxplore.viewmodel
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.yura.bwxplore.data.firebase.Repository
+import com.yura.bwxplore.data.Repository
 import com.yura.bwxplore.di.Injection
 import com.yura.bwxplore.ui.home.HomeViewModel
 

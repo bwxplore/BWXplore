@@ -44,6 +44,13 @@ class HomeFragment : Fragment() {
 
         setProfile()
         setPopularPlaces()
+        getNews()
+    }
+
+    private fun getNews() {
+        viewModel.getNews().observe(viewLifecycleOwner,{
+            println(it)
+        })
     }
 
     private fun setPopularPlaces() {
