@@ -1,45 +1,42 @@
 package com.yura.bwxplore.ui.home
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.yura.bwxplore.R
 import com.yura.bwxplore.data.firebase.entities.Location
 import com.yura.bwxplore.databinding.ItemPopularBinding
 
 class PopularAdapter(private val listLocation: ArrayList<Location>) :
     RecyclerView.Adapter<PopularAdapter.ListViewHolder>() {
 
-    private lateinit var onItemClickCallback: OnItemClickCallback
+    private lateinit var onItemPopularClickCallback: OnItemPopularClickCallback
     private lateinit var binding: ItemPopularBinding
 
-    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
-        this.onItemClickCallback = onItemClickCallback
+    fun setOnItemClickCallback(onItemPopularClickCallback: OnItemPopularClickCallback) {
+        this.onItemPopularClickCallback = onItemPopularClickCallback
     }
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ListViewHolder {
-        val view =
-            LayoutInflater.from(viewGroup.context).inflate(R.layout.item_popular, viewGroup, false)
-        return ListViewHolder(view)
+        binding =
+            ItemPopularBinding.inflate(LayoutInflater.from(viewGroup.context), viewGroup, false)
+        return ListViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         holder.bind(listLocation[position])
         holder.itemView.setOnClickListener {
-            onItemClickCallback.onItemClick(listLocation[holder.adapterPosition])
+            onItemPopularClickCallback.onItemClick(listLocation[holder.adapterPosition])
         }
     }
 
     override fun getItemCount(): Int = listLocation.size
 
-
-    class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var tvName: TextView = itemView.findViewById(R.id.tv_popular)
-        var imgPhoto: ImageView = itemView.findViewById(R.id.iv_popular)
+    class ListViewHolder(itemView: ItemPopularBinding) : RecyclerView.ViewHolder(itemView.root) {
+        var tvName: TextView = itemView.tvPopular
+        var imgPhoto: ImageView = itemView.ivPopular
         fun bind(data: Location) {
             Glide.with(itemView.context)
                 .load(data.imageUrl)
@@ -48,7 +45,7 @@ class PopularAdapter(private val listLocation: ArrayList<Location>) :
         }
     }
 
-    interface OnItemClickCallback {
+    interface OnItemPopularClickCallback {
         fun onItemClick(data: Location)
     }
 }

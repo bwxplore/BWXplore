@@ -7,22 +7,18 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
 import com.yura.bwxplore.data.firebase.entities.Location
-import com.yura.bwxplore.data.LocationData.listData
+import com.yura.bwxplore.data.remote.entities.ArticlesItem
 import com.yura.bwxplore.databinding.FragmentHomeBinding
 import com.yura.bwxplore.viewmodel.ViewModelFactory
 
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
-    private lateinit var rvPopular: RecyclerView
     private val binding get() = _binding!!
     private lateinit var viewModel: HomeViewModel
     private lateinit var auth: FirebaseAuth
-    private lateinit var popularAdapter: PopularAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,16 +27,14 @@ class HomeFragment : Fragment() {
     ): View {
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-        return root
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         auth = FirebaseAuth.getInstance()
         val factory = ViewModelFactory.getInstance(requireActivity())
-        viewModel = ViewModelProvider(requireActivity(), factory)
-            .get(HomeViewModel::class.java)
+        viewModel = ViewModelProvider(requireActivity(), factory)[HomeViewModel::class.java]
 
         setProfile()
         setPopularPlaces()
@@ -48,18 +42,27 @@ class HomeFragment : Fragment() {
     }
 
     private fun getNews() {
-        viewModel.getNews().observe(viewLifecycleOwner,{
-            println(it)
+        viewModel.getNews().observe(viewLifecycleOwner, {
+            val listItems = ArrayList<ArticlesItem>()
+            listItems.addAll(it)
+            val newsAdapter = NewsAdapter(listItems)
+            with(_binding?.rvNews) {
+                this?.layoutManager =
+                    LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+                this?.adapter = newsAdapter
+                this?.setHasFixedSize(true)
+            }
         })
     }
 
     private fun setPopularPlaces() {
-        viewModel.getPopularPlaces().observe(viewLifecycleOwner,{
+        viewModel.getPopularPlaces().observe(viewLifecycleOwner, {
             val listItems = ArrayList<Location>()
             listItems.addAll(it)
-            val popularAdapter= PopularAdapter(listItems)
-            with(_binding?.rvPopular){
-                this?.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            val popularAdapter = PopularAdapter(listItems)
+            with(_binding?.rvPopular) {
+                this?.layoutManager =
+                    LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
                 this?.adapter = popularAdapter
                 this?.setHasFixedSize(true)
             }

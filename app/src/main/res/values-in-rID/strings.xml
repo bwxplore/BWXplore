@@ -12,9 +12,7 @@
     <string name="repeat_password">Ulangi Kata Sandi</string>
     <string name="pls_fill_all">Mohon isi kolom yang tersedia</string>
     <string name="confirmation_incorrect">Konfirmasi password salah</string>
-    <string name="profile">Profil</string>
     <string name="welcome">Selamat Datang,</string>
     <string name="favorite">Favorit</string>
     <string name="popular_places">Tempat Populer</string>
-    <string name="ijen_crater">Kawah Ijen</string>
 </resources>

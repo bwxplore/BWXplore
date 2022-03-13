@@ -26,10 +26,14 @@ class LoginActivity : AppCompatActivity() {
 
         with(binding) {
             btnLogin.setOnClickListener {
-                if (inputEmail.text.isNotEmpty() && inputPassword.text.length >5){
+                if (inputEmail.text.isNotEmpty() && inputPassword.text.length > 5) {
                     login(inputEmail.text.toString(), inputPassword.text.toString())
                 } else {
-                    Toast.makeText(this@LoginActivity, getString(R.string.pls_fill_all), Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        this@LoginActivity,
+                        getString(R.string.pls_fill_all),
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
 
             }
@@ -45,10 +49,11 @@ class LoginActivity : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful && task.result != null) {
                     // Sign in success, update UI with the signed-in user's information
-                    if (task.result.user != null){
+                    if (task.result.user != null) {
                         reload()
                     } else {
-                        Toast.makeText(this@LoginActivity, "Login Failed", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@LoginActivity, "Login Failed", Toast.LENGTH_SHORT)
+                            .show()
                     }
                 } else {
                     // If sign in fails, display a message to the user.
@@ -61,7 +66,7 @@ class LoginActivity : AppCompatActivity() {
         super.onStart()
         // Check if user is signed in (non-null) and update UI accordingly.
         val currentUser = auth.currentUser
-        if(currentUser != null){
+        if (currentUser != null) {
             reload()
         }
     }

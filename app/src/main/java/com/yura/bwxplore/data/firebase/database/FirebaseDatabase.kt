@@ -4,13 +4,12 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.google.firebase.firestore.FirebaseFirestore
 import com.yura.bwxplore.data.firebase.entities.Location
-import java.lang.Exception
 
 class FirebaseDatabase {
 
-    private val db =  FirebaseFirestore.getInstance()
+    private val db = FirebaseFirestore.getInstance()
 
-    fun getAllPlaces(): LiveData<List<Location>>{
+    fun getAllPlaces(): LiveData<List<Location>> {
         val places = MutableLiveData<List<Location>>()
         return try {
             db.collection("places")
@@ -22,13 +21,13 @@ class FirebaseDatabase {
                     places.value = result
                 }
             places
-        }catch (e:Exception){
+        } catch (e: Exception) {
             places.value = emptyList()
             places
         }
     }
 
-    fun getPopularPlaces(): LiveData<List<Location>>{
+    fun getPopularPlaces(): LiveData<List<Location>> {
         val places = MutableLiveData<List<Location>>()
         return try {
             db.collection("places")
@@ -41,17 +40,17 @@ class FirebaseDatabase {
                     places.value = result
                 }
             places
-        }catch (e:Exception){
+        } catch (e: Exception) {
             places.value = emptyList()
             places
         }
     }
 
-    companion object{
+    companion object {
         @Volatile
-        private var instance : FirebaseDatabase? = null
+        private var instance: FirebaseDatabase? = null
 
-        fun getInstance() : FirebaseDatabase =
+        fun getInstance(): FirebaseDatabase =
             instance ?: synchronized(this)
             {
                 instance ?: FirebaseDatabase()

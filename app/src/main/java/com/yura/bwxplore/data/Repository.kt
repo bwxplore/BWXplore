@@ -6,10 +6,10 @@ import com.yura.bwxplore.data.firebase.entities.Location
 import com.yura.bwxplore.data.remote.RemoteDataSource
 import com.yura.bwxplore.data.remote.entities.ArticlesItem
 
-class Repository private  constructor(
+class Repository private constructor(
     private val firebaseDatabase: FirebaseDatabase,
     private val remoteDataSource: RemoteDataSource
-): AllDataSource{
+) : AllDataSource {
 
     override fun getAllPlaces(): LiveData<List<Location>> {
         return firebaseDatabase.getAllPlaces()
@@ -23,14 +23,14 @@ class Repository private  constructor(
         return remoteDataSource.getNews()
     }
 
-    companion object{
+    companion object {
         @Volatile
-        private var instance : Repository? = null
+        private var instance: Repository? = null
 
         fun getInstance(
             firebaseDatabase: FirebaseDatabase,
             remoteDataSource: RemoteDataSource
-        ) : Repository =
+        ): Repository =
             instance ?: synchronized(this)
             {
                 instance ?: Repository(

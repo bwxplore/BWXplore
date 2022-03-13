@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name" translatable="false">BWXplore</string>
-    <string name="title_activity_maps" translatable="false">MapsActivity</string>
     <string name="title_activity_login" translatable="false">LoginActivity</string>
     <string name="prompt_password">Password</string>
     <string name="login" translatable="false">Login</string>
@@ -23,10 +22,10 @@
     <string name="title_home" translatable="false">Home</string>
     <string name="title_dashboard" translatable="false">Dashboard</string>
     <string name="title_notifications" translatable="false">Notifications</string>
-    <string name="profile">Profile</string>
     <string name="welcome">Welcome,</string>
     <string name="favorite">Favorite</string>
     <string name="popular_places">Popular Places</string>
     <string name="image_popular_place" translatable="false">Image Popular Place</string>
-    <string name="ijen_crater">Ijen Crater</string>
+    <string name="related_news">Related News</string>
+    <string name="image_news">image news</string>
 </resources>
