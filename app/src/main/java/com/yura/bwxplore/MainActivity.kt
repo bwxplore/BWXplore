@@ -8,6 +8,10 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.firestore.SetOptions
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
+import com.yura.bwxplore.data.LocationData.listData
 import com.yura.bwxplore.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -27,12 +31,24 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications
+                R.id.navigation_home, R.id.navigation_explore, R.id.navigation_account
             )
         )
         setSupportActionBar(Toolbar(this))
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+//        addData()
     }
+
+    //fungsi untuk menambahkan data local ke firebase
+//    private fun addData() {
+//        val db = Firebase.firestore
+//
+//        listData.forEach{ data ->
+//            db.collection("places").document(data.id.toString())
+//                .set(data, SetOptions.merge())
+//        }
+//    }
 }

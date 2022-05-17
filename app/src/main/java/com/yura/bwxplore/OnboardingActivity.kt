@@ -7,7 +7,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.yura.bwxplore.databinding.ActivityOnboardingBinding
-import com.yura.bwxplore.ui.login.LoginActivity
+import com.yura.bwxplore.ui.auth.LoginActivity
+import com.yura.bwxplore.ui.detail.MapsActivity
 
 class OnboardingActivity : AppCompatActivity() {
     private lateinit var binding: ActivityOnboardingBinding
@@ -17,21 +18,16 @@ class OnboardingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         auth = Firebase.auth
+        val currentUser = auth.currentUser
+        if (currentUser != null) {
+            reload()
+        }
 
         binding = ActivityOnboardingBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.btnGetStarted.setOnClickListener {
             startActivity(Intent(baseContext, LoginActivity::class.java))
-        }
-    }
-
-    public override fun onStart() {
-        super.onStart()
-        // Check if user is signed in (non-null) and update UI accordingly.
-        val currentUser = auth.currentUser
-        if (currentUser != null) {
-            reload()
         }
     }
 

@@ -1,9 +1,9 @@
 package com.yura.bwxplore.data.remote
 
+import com.yura.bwxplore.data.remote.entities.CalculateResponse
 import com.yura.bwxplore.data.remote.entities.NewsResponse
 import retrofit2.Call
-import retrofit2.http.GET
-import retrofit2.http.Query
+import retrofit2.http.*
 
 interface ApiServices {
     @GET("everything")

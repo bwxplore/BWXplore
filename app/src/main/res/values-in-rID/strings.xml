@@ -15,4 +15,8 @@
     <string name="welcome">Selamat Datang,</string>
     <string name="favorite">Favorit</string>
     <string name="popular_places">Tempat Populer</string>
+    <string name="related_news">Berita Terkait</string>
+    <string name="explore_places">Eksplor Tempat</string>
+    <string name="title_explore">Eksplor</string>
+    <string name="title_account">Akun</string>
 </resources>

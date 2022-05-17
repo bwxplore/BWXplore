@@ -15,6 +15,10 @@ class NewsAdapter(private val listNews: ArrayList<ArticlesItem>) :
     private lateinit var onItemClickCallback: OnNewsClickCallback
     private lateinit var binding: ItemNewsBinding
 
+    fun setOnItemClickCallback(onItemClickCallback: OnNewsClickCallback) {
+        this.onItemClickCallback = onItemClickCallback
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
         binding = ItemNewsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ListViewHolder(binding)
@@ -31,12 +35,14 @@ class NewsAdapter(private val listNews: ArrayList<ArticlesItem>) :
 
     class ListViewHolder(itemView: ItemNewsBinding) : RecyclerView.ViewHolder(itemView.root) {
         var tvName: TextView = itemView.tvTitleNews
+        var tvDate: TextView = itemView.tvDate
         private var imgPhoto: ImageView = itemView.imgNews
         fun bind(data: ArticlesItem) {
             Glide.with(itemView.context)
                 .load(data.urlToImage)
                 .into(imgPhoto)
             tvName.text = data.title
+            tvDate.text = "${data.publishedAt?.subSequence(0,9)} ${data.publishedAt?.subSequence(11,16)}"
         }
     }
 

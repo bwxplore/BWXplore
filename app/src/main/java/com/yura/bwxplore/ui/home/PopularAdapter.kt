@@ -12,12 +12,7 @@ import com.yura.bwxplore.databinding.ItemPopularBinding
 class PopularAdapter(private val listLocation: ArrayList<Location>) :
     RecyclerView.Adapter<PopularAdapter.ListViewHolder>() {
 
-    private lateinit var onItemPopularClickCallback: OnItemPopularClickCallback
     private lateinit var binding: ItemPopularBinding
-
-    fun setOnItemClickCallback(onItemPopularClickCallback: OnItemPopularClickCallback) {
-        this.onItemPopularClickCallback = onItemPopularClickCallback
-    }
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ListViewHolder {
         binding =
@@ -27,9 +22,6 @@ class PopularAdapter(private val listLocation: ArrayList<Location>) :
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         holder.bind(listLocation[position])
-        holder.itemView.setOnClickListener {
-            onItemPopularClickCallback.onItemClick(listLocation[holder.adapterPosition])
-        }
     }
 
     override fun getItemCount(): Int = listLocation.size
@@ -43,9 +35,5 @@ class PopularAdapter(private val listLocation: ArrayList<Location>) :
                 .into(imgPhoto)
             tvName.text = data.name
         }
-    }
-
-    interface OnItemPopularClickCallback {
-        fun onItemClick(data: Location)
     }
 }

@@ -27,5 +27,18 @@
     <string name="popular_places">Popular Places</string>
     <string name="image_popular_place" translatable="false">Image Popular Place</string>
     <string name="related_news">Related News</string>
-    <string name="image_news">image news</string>
+    <string name="image_news" translatable="false">image news</string>
+    <string name="bg_blue" translatable="false">Bg blue</string>
+    <string name="date" translatable="false">Date</string>
+    <string name="back" translatable="false">back</string>
+    <string name="value" translatable="false">value</string>
+    <string name="image_place" translatable="false">Image Place</string>
+    <string name="explore_places">Explore Places</string>
+    <string name="submit" translatable="false">Submit</string>
+    <string name="title_explore">Explore</string>
+    <string name="title_account">Account</string>
+    <string name="tick">Tick</string>
+    <string name="loading">Loading...</string>
+    <string name="back_to_menu">Back to menu</string>
+    <string name="logout">Logout</string>
 </resources>

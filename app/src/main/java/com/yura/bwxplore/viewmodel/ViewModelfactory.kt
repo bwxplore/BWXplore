@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.yura.bwxplore.data.Repository
 import com.yura.bwxplore.di.Injection
+import com.yura.bwxplore.ui.explore.ExploreViewModel
 import com.yura.bwxplore.ui.home.HomeViewModel
 
 class ViewModelFactory private constructor(private val repository: Repository) :
@@ -13,6 +14,9 @@ class ViewModelFactory private constructor(private val repository: Repository) :
         when {
             modelClass.isAssignableFrom(HomeViewModel::class.java) -> {
                 return HomeViewModel(repository) as T
+            }
+            modelClass.isAssignableFrom(ExploreViewModel::class.java) -> {
+                return ExploreViewModel(repository) as T
             }
             else -> {
                 throw Throwable("Unknown Viewmodel Class : ${modelClass.name}")

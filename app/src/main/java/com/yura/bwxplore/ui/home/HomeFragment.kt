@@ -1,5 +1,6 @@
 package com.yura.bwxplore.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.yura.bwxplore.data.firebase.entities.Location
 import com.yura.bwxplore.data.remote.entities.ArticlesItem
 import com.yura.bwxplore.databinding.FragmentHomeBinding
+import com.yura.bwxplore.ui.detail.NewsDetailActivity
+import com.yura.bwxplore.ui.detail.NewsDetailActivity.Companion.URL
 import com.yura.bwxplore.viewmodel.ViewModelFactory
 
 class HomeFragment : Fragment() {
@@ -37,12 +40,12 @@ class HomeFragment : Fragment() {
         viewModel = ViewModelProvider(requireActivity(), factory)[HomeViewModel::class.java]
 
         setProfile()
-        setPopularPlaces()
+        getPopularPlaces()
         getNews()
     }
 
     private fun getNews() {
-        viewModel.getNews().observe(viewLifecycleOwner, {
+        viewModel.getNews().observe(viewLifecycleOwner) {
             val listItems = ArrayList<ArticlesItem>()
             listItems.addAll(it)
             val newsAdapter = NewsAdapter(listItems)
@@ -52,11 +55,19 @@ class HomeFragment : Fragment() {
                 this?.adapter = newsAdapter
                 this?.setHasFixedSize(true)
             }
-        })
+
+            newsAdapter.setOnItemClickCallback(object: NewsAdapter.OnNewsClickCallback{
+                override fun onItemClick(data: ArticlesItem) {
+                    val intent = Intent(context, NewsDetailActivity::class.java)
+                    intent.putExtra(URL, data.url)
+                    startActivity(intent)
+                }
+            })
+        }
     }
 
-    private fun setPopularPlaces() {
-        viewModel.getPopularPlaces().observe(viewLifecycleOwner, {
+    private fun getPopularPlaces() {
+        viewModel.getPopularPlaces().observe(viewLifecycleOwner) {
             val listItems = ArrayList<Location>()
             listItems.addAll(it)
             val popularAdapter = PopularAdapter(listItems)
@@ -66,7 +77,7 @@ class HomeFragment : Fragment() {
                 this?.adapter = popularAdapter
                 this?.setHasFixedSize(true)
             }
-        })
+        }
     }
 
     private fun setProfile() {
@@ -78,4 +89,6 @@ class HomeFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
+
 }

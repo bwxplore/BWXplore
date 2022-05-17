@@ -12,21 +12,31 @@
         <entry key="..\:/Android/BWXplore/app/src/main/res/drawable/ic_baseline_key_24.xml" value="0.193" />
         <entry key="..\:/Android/BWXplore/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.193" />
         <entry key="..\:/Android/BWXplore/app/src/main/res/drawable/ic_baseline_person_black.xml" value="0.193" />
+        <entry key="..\:/Android/BWXplore/app/src/main/res/drawable/ic_baseline_person_white.xml" value="0.1475" />
+        <entry key="..\:/Android/BWXplore/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.1475" />
+        <entry key="..\:/Android/BWXplore/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.1475" />
+        <entry key="..\:/Android/BWXplore/app/src/main/res/drawable/ic_tick_point.xml" value="0.1545" />
+        <entry key="..\:/Android/BWXplore/app/src/main/res/drawable/layout_border.xml" value="0.1475" />
         <entry key="..\:/Android/BWXplore/app/src/main/res/drawable/login.xml" value="0.129" />
         <entry key="..\:/Android/BWXplore/app/src/main/res/drawable/my_rect.xml" value="0.121" />
         <entry key="..\:/Android/BWXplore/app/src/main/res/layout-v31/activity_login.xml" value="0.25" />
         <entry key="..\:/Android/BWXplore/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.16598639455782313" />
         <entry key="..\:/Android/BWXplore/app/src/main/res/layout-w936dp/activity_login.xml" value="0.1" />
+        <entry key="..\:/Android/BWXplore/app/src/main/res/layout/activity_coba.xml" value="0.109375" />
         <entry key="..\:/Android/BWXplore/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Android/BWXplore/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Android/BWXplore/app/src/main/res/layout/activity_maps.xml" value="0.25" />
+        <entry key="..\:/Android/BWXplore/app/src/main/res/layout/activity_news_detail.xml" value="0.264" />
         <entry key="..\:/Android/BWXplore/app/src/main/res/layout/activity_onboarding.xml" value="0.25" />
         <entry key="..\:/Android/BWXplore/app/src/main/res/layout/activity_register.xml" value="0.25" />
         <entry key="..\:/Android/BWXplore/app/src/main/res/layout/activity_splash.xml" value="0.2" />
+        <entry key="..\:/Android/BWXplore/app/src/main/res/layout/fragment_account.xml" value="0.24635416666666668" />
         <entry key="..\:/Android/BWXplore/app/src/main/res/layout/fragment_dashboard.xml" value="0.152" />
+        <entry key="..\:/Android/BWXplore/app/src/main/res/layout/fragment_explore.xml" value="0.264" />
         <entry key="..\:/Android/BWXplore/app/src/main/res/layout/fragment_home.xml" value="0.264" />
         <entry key="..\:/Android/BWXplore/app/src/main/res/layout/fragment_notifications.xml" value="0.25" />
         <entry key="..\:/Android/BWXplore/app/src/main/res/layout/item_news.xml" value="0.25" />
+        <entry key="..\:/Android/BWXplore/app/src/main/res/layout/item_places.xml" value="0.25" />
         <entry key="..\:/Android/BWXplore/app/src/main/res/layout/item_popular.xml" value="0.264" />
         <entry key="..\:/Android/BWXplore/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25" />
       </map>

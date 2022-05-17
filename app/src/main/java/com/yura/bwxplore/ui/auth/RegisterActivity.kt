@@ -1,4 +1,4 @@
-package com.yura.bwxplore.ui.register
+package com.yura.bwxplore.ui.auth
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,7 +11,6 @@ import com.google.firebase.ktx.Firebase
 import com.yura.bwxplore.MainActivity
 import com.yura.bwxplore.R
 import com.yura.bwxplore.databinding.ActivityRegisterBinding
-import com.yura.bwxplore.ui.login.LoginActivity
 
 class RegisterActivity : AppCompatActivity() {
 
